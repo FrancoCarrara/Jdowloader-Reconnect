@@ -1,6 +1,8 @@
 @ECHO OFF
-Set JDownloader="C:\Path\To\Your\JDownloader\Executable"
-Set FileName=all.txt
+Set jdownloaderpath="C:\Path\To\Your\JDownloader\Executable"
+Set filename=all.txt
+Set connectiontimeout=30
+Set downloadtime=800
 
 :Connect
 echo Connect to VPN
@@ -14,7 +16,7 @@ Call Set "randline=%%line[%rand%]%%"
 cd "C:\Program Files\NordVPN\"
 echo Connecting to %randline%
 nordvpn -c -g "%randline%"
-TIMEOUT /T 30
+TIMEOUT /T %connectiontimeout%
 GOTO CheckInternet
 
 :CheckInternet
@@ -24,7 +26,7 @@ if errorlevel 1 (GOTO Connect) else (GOTO Download)
 
 :Download
 taskkill /IM JDownloader2.exe /F
-cd %JDownloader%
+cd %jdownloaderpath%
 start JDownloader2.exe
-TIMEOUT /T 800
+TIMEOUT /T %downloadtime%
 GOTO Connect
