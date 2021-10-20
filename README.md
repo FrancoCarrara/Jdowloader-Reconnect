@@ -7,7 +7,7 @@
 
 ## Config
 
-Set the directory where your JDownloader.exe is located. Must be between 
+Set the directory where your JDownloader.exe is located. The path must be inside double quotes.
 
 ```
 Set jdownloaderpath="C:\Users\Franco\AppData\Local\JDownloader 2.0"
