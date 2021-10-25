@@ -3,6 +3,7 @@ Set jdownloaderpath="C:\Path\To\Your\JDownloader\Executable"
 Set filename=all.txt
 Set connectiontimeout=30
 Set downloadtime=800
+Set checkconnection=true
 
 :Connect
 echo Connect to VPN
@@ -17,7 +18,7 @@ cd "C:\Program Files\NordVPN\"
 echo Connecting to %randline%
 nordvpn -c -g "%randline%"
 TIMEOUT /T %connectiontimeout%
-GOTO CheckInternet
+IF %checkconnection%==true (GOTO CheckInternet) ELSE (GOTO Download)
 
 :CheckInternet
 echo Checking internet connection
