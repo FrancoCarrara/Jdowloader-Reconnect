@@ -7,8 +7,13 @@
 
 ## Config
 
-Set the directory where your JDownloader.exe is located. The path must be inside double quotes.
+Recommended configs for JDownloader and NordVPN:
+- In NordVPN use the Split tunneling and enable for Jdownloader and the Windows Command Processor. 
+- In JDowloader, in General "if the file already exist" must be "Overwrite" and the option of Autostart should be Always with no countdown.
 
+
+
+Set the directory where your JDownloader.exe is located. The path must be inside double quotes.
 ```
 Set jdownloaderpath="C:\Users\Franco\AppData\Local\JDownloader 2.0"
 ```
@@ -27,6 +32,11 @@ Set connectiontimeout=30
 Set the time to start the loop again. 800 seconds are 13 minutes that are the average for a 50MBs connection. You should change it depending on how mamy takes for your connection to reach the download limit.
 ```
 Set downloadtime=800
+```
+
+If you want that the script check the connection, should be true. If you want to skip the connection checks, set in false.
+```
+Set checkconnection=true
 ```
 
 ## Development
